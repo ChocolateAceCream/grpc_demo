@@ -1,0 +1,11 @@
+# Install protoc from https://github.com/protocolbuffers/protobuf
+# Install Go protobuf plugin
+go install google.golang.org/protobuf/cmd/protoc-gen-go@latest
+# Install Go gRPC plugin
+go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@latest
+
+# Run protoc to generate Go code from your protobuf definition.
+protoc --go_out=. --go-grpc_out=. greeter.proto
+
+# download and add protoc to source
+export PATH=$PATH:~/downloads/protoc-26.1-linux-x86_64/bin

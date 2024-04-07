@@ -1,0 +1,17 @@
+syntax = "proto3";
+package sms; // proto self scope
+option go_package = "./proto"; // go import pkg name
+service SmsService{
+  //send sms
+  rpc SendSMS(SendSMSRequest) returns (SendSMSResponse){}
+}
+
+message SendSMSRequest{
+  string Receiver = 1;
+  string Message = 2;
+}
+
+message SendSMSResponse{
+  int32 Code = 1;
+  string Resp = 2;
+}
